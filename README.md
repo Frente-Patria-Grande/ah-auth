@@ -34,7 +34,7 @@ class User ... {
 You can publish and run the migrations with:
 
 ```php
-php artisan vendor:publish --tag=":package_slug-migrations"
+php artisan vendor:publish --tag="ah-auth-migrations"
 php artisan migrate
 ```
 
