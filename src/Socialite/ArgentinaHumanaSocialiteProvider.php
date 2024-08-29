@@ -17,25 +17,25 @@ class ArgentinaHumanaSocialiteProvider extends AbstractProvider
 
     private function getArgentinaHumanaOauthUrl(): string
     {
-        return $this->getArgentinaHumanaUrl() . '/oauth';
+        return $this->getArgentinaHumanaUrl().'/oauth';
     }
 
     protected function getAuthUrl($state)
     {
-        return $this->buildAuthUrlFromBase($this->getArgentinaHumanaOauthUrl() . '/authorize', $state);
+        return $this->buildAuthUrlFromBase($this->getArgentinaHumanaOauthUrl().'/authorize', $state);
     }
 
     protected function getTokenUrl()
     {
-        return $this->getArgentinaHumanaOauthUrl() . '/token';
+        return $this->getArgentinaHumanaOauthUrl().'/token';
     }
 
     protected function getUserByToken($token)
     {
-        $response = $this->getHttpClient()->get($this->getArgentinaHumanaUrl() . '/api/user', [
+        $response = $this->getHttpClient()->get($this->getArgentinaHumanaUrl().'/api/user', [
             'headers' => [
                 'cache-control' => 'no-cache',
-                'Authorization' => 'Bearer ' . $token,
+                'Authorization' => 'Bearer '.$token,
                 'Content-Type' => 'application/x-www-form-urlencoded',
             ],
         ]);
@@ -45,7 +45,7 @@ class ArgentinaHumanaSocialiteProvider extends AbstractProvider
 
     protected function mapUserToObject(array $user)
     {
-        return (new User())->setRaw($user)->map([
+        return (new User)->setRaw($user)->map([
             'id' => $user['id'],
             'email' => $user['email'],
             'first_name' => Arr::get($user, 'contact.first_name'),

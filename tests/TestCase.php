@@ -2,9 +2,9 @@
 
 namespace FrentePatriaGrande\AHAuth\Tests;
 
+use FrentePatriaGrande\AHAuth\AHAuthServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use FrentePatriaGrande\AHAuth\AHAuthServiceProvider;
 
 class TestCase extends Orchestra
 {
