@@ -1,7 +1,5 @@
 <?php
 
-
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -29,6 +27,7 @@ class AuthController
 
         if (! $user) {
             Session::put('auth.denied.email', $socialiteUser->getEmail());
+
             return redirect()->route('auth.denied');
         }
 
