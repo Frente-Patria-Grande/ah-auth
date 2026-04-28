@@ -20,6 +20,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
+            \Laravel\Socialite\SocialiteServiceProvider::class,
             AHAuthServiceProvider::class,
         ];
     }
